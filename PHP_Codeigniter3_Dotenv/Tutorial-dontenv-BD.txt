@@ -1,0 +1,71 @@
+
+1° Passo
+
+1 - Copy folder **system** to your codeigniter projects.
+1.1 - Copiar a pasta dotenv para dentro de system do codeigniter
+
+
+2°Passo 
+
+2 - Add this code to your codeigniter index.php before codeigniter core loaded (before this text "* LOAD THE BOOTSTRAP FILE") :
+2.1 - Adicionar este código ao seu codeigniter index.php antes do core do codeigniter ser carregado (antes deste texto "* LOAD THE BOOTSTRAP FILE"):
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD PHP DOT ENV FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ *
+ */
+
+require_once BASEPATH . 'dotenv/autoloader.php';
+
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
+
+3°Passo 
+
+3 - ## Configuration
+Create **.env** according your environment by copy file **.env.example** for database configuration and the other configuration. 
+Example : **.env.development**, **.env.testing**, **.env.production**
+
+3.1 - Criar os arquivos 
+- .env.production
+- .env.development
+
+3.2 Carregue a configuração, no arquivo **application/config/database.php** mude para esta configuração
+
+$db['default'] = array(
+	'dsn'	   => '',
+	'hostname' => getenv('FB_HOST'),
+	'username' => getenv('FB_USERNAME'),
+	'password' => getenv('FB_PASSWORD'),
+	'database' => getenv('FB_BASE'),
+	
+3.3 Adicionar nos Arquivos Dotenv a Configuração do Banco exemplo	
+
+[FIREBIRD]
+FB_HOST=191.234.181.16
+FB_USERNAME=sysdba
+FB_PASSWORD=sy6ba120
+FB_BASE=C:\Database\ULP.FBD
+	
+
+4°Passo
+
+4 - Add ".env" to your .gitignore file
+4.1 - Adicionar ' .env* ' no gitgnore
+
+
+5°Passo
+
+5.1 Para funcionar e alterar os bancos no Arquivo index.php raiz 
+
+Aqui * define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development'); * 
+
+Trocar entre development  e production
+
+
+
