@@ -1,0 +1,23 @@
+
+Teste de Conexao com Banco de Dados
+
+// Carrega o banco de dados
+		$this->load->database();
+
+		// Testa a conexão
+		try {
+			$this->db->conn_id;
+			echo "Conexão com o banco de dados realizada com sucesso!";
+		} catch (Exception $e) {
+			echo "Erro ao conectar com o banco de dados: " . $e->getMessage();
+		}
+		
+		2° Opção
+		
+			// Testa a conexão
+		if ($this->db->conn_id !== NULL) {
+			echo "Conexão com o banco de dados realizada com sucesso!";
+		} else {
+			echo "Erro ao conectar com o banco de dados.";
+		}
+
