@@ -7,7 +7,7 @@
 </p>
 
 <ul>
-	<li>Dicas de <a href="(https://github.com/maniero/SOpt/blob/master/PHP/Conceptual.md">PHP Conceitual</a></li>
+	<li>Dicas de <a href="https://github.com/maniero/SOpt/blob/master/PHP/Conceptual.md">PHP Conceitual</a></li>
 	<li>Extensão <code>PHP Intephesense</code> Usar na versão 1.8.0</li>
 	<li><a href="https://www.youtube.com/watch?v=0kvOQJj7gVk">Como configurar o Xampp para trabalhar com HTTPS - SSL</a></li>
 </ul>
